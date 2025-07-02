@@ -1,111 +1,119 @@
 ---
 title: "Key Features Overview"
-description: "Preview changes locally to update your docsa"
+description: "A detailed look at the core functionalities that power the OxVenta AI protocol."
 ---
 
-<Info>
-  **Prerequisite**: Please install Node.js (version 19 or higher) before proceeding. \\
+OxVenta AI delivers an intelligent, accessible, and secure DeFi experience through a suite of modular, AI-driven features. By abstracting away blockchain complexity, OxVenta empowers users to engage with decentralized finance through natural language—without interacting with smart contracts, dashboards, or wallets directly.
 
-  Please upgrade to `docs.json` before proceeding and delete the legacy `mint.json` file.
-</Info>
+Each feature is designed to maximize usability, execution efficiency, and multi-chain compatibility.
 
-Follow these steps to install and run Mintlify on your operating system:
+## 1. AI-Powered Token Swapping
 
-**Step 1**: Install Mintlify:
+Users can execute token swaps across supported blockchain networks by submitting simple text-based commands. The AI agent handles parsing, routing, and execution automatically.
 
-<CodeGroup>
+### Capabilities
 
-```bash npm
-npm i -g mintlify
+- Cross-chain routing with optimal liquidity path selection
+- Automated gas estimation and slippage control
+- Integration with major DEX protocols for liquidity sourcing
+- Supports both EVM and non-EVM chains
+
+### Example Command
+
+```
+Swap 10 USDT to ETH
 ```
 
+## 2. Token Creation and Deployment
 
-```bash yarn
-yarn global add mintlify
+OxVenta provides a no-code solution for deploying ERC-20 tokens, ideal for community projects, startups, or experimentation.
+
+### Capabilities
+
+- AI-assisted deployment of standard or extended ERC-20 tokens
+- Customizable parameters: name, symbol, supply, decimals
+- Optional tokenomics configuration: mintable, burnable, taxable
+- Compatible with instant liquidity provisioning
+
+> **_This feature simplifies token issuance, eliminating technical barriers for non-developers._**
+
+## 3. Liquidity Provisioning and Yield Optimization
+
+OxVenta enables users to contribute liquidity to supported DEX pools and optimize yield strategies via natural language input.
+
+### Capabilities
+
+- Real-time analysis of APYs and token pair trends
+- Single-command liquidity provisioning and removal
+- Automated pairing with wrapped base tokens (e.g., WBNB, WETH)
+- Support for future farming and staking integrations
+
+### Example Command
+
+```
+Provide liquidity for ETH/USDC
 ```
 
-</CodeGroup>
+> **_This simplifies participation in liquidity mining and yield farming without traditional DeFi interfaces._**
 
-**Step 2**: Navigate to the docs directory (where the `docs.json` file is located) and execute the following command:
+## 4. AI-Driven Wallet Management
 
-```bash
-mintlify dev
-```
+OxVenta offers a secure, session-based wallet system to track balances, manage assets, and sign transactions without extensions or external apps.
 
-A local preview of your documentation will be available at `http://localhost:3000`.
+### Capabilities
 
-### Custom Ports
+- Multi-chain wallet tracking within a single session
+- Real-time balance queries and portfolio summaries
+- In-session encrypted key storage and signature flow
+- Optional import of external private keys (advanced users)
 
-By default, Mintlify uses port 3000. You can customize the port Mintlify runs on by using the `--port` flag. To run Mintlify on port 3333, for instance, use this command:
+> **_Wallets are temporary, non-custodial, and destroyed at session termination, prioritizing user privacy and security._**
 
-```bash
-mintlify dev --port 3333
-```
+## 5. Natural Language User Interface
 
-If you attempt to run Mintlify on a port that's already in use, it will use the next available port:
+OxVenta's conversational interface enables blockchain interaction through platforms users already use daily.
 
-```md
-Port 3000 is already in use. Trying 3001 instead.
-```
+### Capabilities
 
-## Mintlify Versions
+- Deployed on Telegram with Discord and X integrations in progress
+- No browser extensions or third-party wallets required
+- Intelligent command parsing with real-time feedback
+- Roadmap includes multilingual support and voice input
 
-Please note that each CLI release is associated with a specific version of Mintlify. If your local website doesn't align with the production version, please update the CLI:
+> **_Complex DeFi actions are reduced to familiar, human-centric language._**
 
-<CodeGroup>
+## 6. Embedded Security and Smart Verification
 
-```bash npm
-npm i -g mintlify@latest
-```
+Security is integrated into every layer of OxVenta’s architecture—from smart contract execution to AI-level fraud detection.
 
+### Capabilities
 
-```bash yarn
-yarn global upgrade mintlify
-```
+- On-chain transaction simulation and validation
+- Behavior-based anomaly and exploit detection
+- Multi-signature enforcement on critical functions
+- Transparent logs and public audit trails
 
-</CodeGroup>
+> **_The system actively mitigates malicious behavior while maintaining full transparency for users._**
 
-## Validating Links
+### 7. Cross Chain Compatibility
 
-The CLI can assist with validating reference links made in your documentation. To identify any broken links, use the following command:
+OxVenta is built to operate seamlessly across multiple chains, both EVM and non-EVM, using integrated bridge protocols and dynamic routing.
 
-```bash
-mintlify broken-links
-```
+### Supported Networks
 
-## Deployment
+- Ethereum, Binance Smart Chain, Base, Polygon, Arbitrum (live/planned)
+- Solana, Cosmos SDK chains (under research)
 
-<Tip>
-  Unlimited editors available under the [Pro
-  Plan](https://mintlify.com/pricing) and above.
-</Tip>
+### Bridge Integration
 
-If the deployment is successful, you should see the following:
+- LayerZero
+- Wormhole
+- Axelar
 
-<Frame>
-  <img
-    src="/images/checks-passed.png"
-    style={{ borderRadius:"0.5rem" }}
-  />
-</Frame>
+> **_Users interact with a unified interface, while the AI handles bridging, routing, and execution under the hood._**
 
-## Code Formatting
+## Conclusion
 
-We suggest using extensions on your IDE to recognize and format MDX. If you're a VSCode user, consider the [MDX VSCode extension](https://marketplace.visualstudio.com/items?itemName=unifiedjs.vscode-mdx) for syntax highlighting, and [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) for code formatting.
+OxVenta AI redefines how users access and interact with decentralized finance. From token creation to cross-chain swaps, every feature is designed with accessibility, security, and automation in mind—making DeFi available to a broader audience without sacrificing control or transparency.
 
-## Troubleshooting
-
-<AccordionGroup>
-  <Accordion title='Error: Could not load the "sharp" module using the darwin-arm64 runtime'>
-    This may be due to an outdated version of node. Try the following:
-
-    1. Remove the currently-installed version of mintlify: `npm remove -g mintlify`
-    2. Upgrade to Node v19 or higher.
-    3. Reinstall mintlify: `npm install -g mintlify`
-  </Accordion>
-  <Accordion title="Issue: Encountering an unknown error">
-    Solution: Go to the root of your device and delete the ~/.mintlify folder. Afterwards, run `mintlify dev` again.
-  </Accordion>
-</AccordionGroup>
-
-Curious about what changed in the CLI version? [Check out the CLI changelog.](https://www.npmjs.com/package/mintlify?activeTab=versions)
+For details on each capability, refer to the [**<u>Core Features</u>**](https://docs.oxventa.io/core-features/3-1-token-swaps) section of this documentation.
