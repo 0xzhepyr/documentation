@@ -14,11 +14,11 @@
         "tab": "Guides",
         "groups": [
           {
-            "group": "Get Started",
+            "group": "Welcome",
             "pages": [
               "index",
-              "quickstart",
-              "development"
+              "whatis",
+              "key"
             ]
           },
           {
