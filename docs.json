@@ -58,17 +58,17 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
+          "anchor": "Telegram",
+          "href": "https:/oxventa.io/",
           "icon": "book-open-cover"
         },
         {
-          "anchor": "Community",
-          "href": "https://mintlify.com/community",
+          "anchor": "X / Twitter",
+          "href": "https:/oxventa.io/",
           "icon": "slack"
         },
         {
-          "anchor": "Blog",
+          "anchor": "Buy",
           "href": "https://mintlify.com/blog",
           "icon": "newspaper"
         }
@@ -83,13 +83,13 @@
     "links": [
       {
         "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "href": "mailto:hi@0xventa.io"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Launch App",
+      "href": "https:/oxventa.io/"
     }
   },
   "footer": {
