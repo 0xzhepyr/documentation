@@ -46,11 +46,13 @@
         "tab": "Developer Guide",
         "groups": [
           {
-            "group": "Developer Docs",
+            "group": "Developer Guide",
             "pages": [
               "api-reference/introduction"
             ]
-          },
+          }
+        ]
+      }
     ],
     "global": {
       "anchors": [
