@@ -47,6 +47,14 @@
               "architecture/crosschain",
               "architecture/security"
             ]
+          },
+          {
+            "group": "Token & Economics",
+            "pages": [
+              "tokenomics/token",
+              "tokenomics/roadmap",
+              "tokenomics/revenue"
+            ]
           }
         ]
       },
