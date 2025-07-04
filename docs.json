@@ -3,9 +3,9 @@
   "theme": "maple",
   "name": "0xVenta Documentation",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#fe0293",
+    "light": "#fe0293",
+    "dark": "#fe0293"
   },
   "favicon": "/favicon.svg",
   "navigation": {
