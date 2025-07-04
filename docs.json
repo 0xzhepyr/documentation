@@ -39,6 +39,14 @@
               "corefeatures/liquid",
               "corefeatures/wallet"
             ]
+          },
+          {
+            "group": "Architecture",
+            "pages": [
+              "architecture/agent",
+              "architecture/crosschain",
+              "architecture/security"
+            ]
           }
         ]
       },
