@@ -30,6 +30,15 @@
               "gettingstarted/networks",
               "gettingstarted/usetelegram"
             ]
+          },
+          {
+            "group": "Core Features",
+            "pages": [
+              "corefeatures/swap",
+              "corefeatures/creation",
+              "corefeatures/liquid",
+              "corefeatures/wallet"
+            ]
           }
         ]
       },
@@ -58,12 +67,12 @@
       "anchors": [
         {
           "anchor": "Telegram",
-          "href": "https:/oxventa.io/",
+          "href": "https://oxventa.io/",
           "icon": "book-open-cover"
         },
         {
           "anchor": "X / Twitter",
-          "href": "https:/oxventa.io/",
+          "href": "https://oxventa.io/",
           "icon": "slack"
         },
         {
@@ -88,7 +97,7 @@
     "primary": {
       "type": "button",
       "label": "Launch App",
-      "href": "https:/oxventa.io/"
+      "href": "https://oxventa.io/"
     }
   },
   "footer": {
