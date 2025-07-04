@@ -43,7 +43,7 @@
           {
             "group": "Architecture",
             "pages": [
-              "architecture/aiagent",
+              "architecture/agent",
               "architecture/crosschain",
               "architecture/security"
             ]
