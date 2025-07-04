@@ -4,8 +4,8 @@
   "name": "0xVenta Documentation",
   "colors": {
     "primary": "#fe0293",
-    "light": "#ff7c22",
-    "dark": "#ff7c22"
+    "light": "#fe0293",
+    "dark": "#fe0293"
   },
   "favicon": "/favicon.svg",
   "navigation": {
