@@ -1,4 +1,107 @@
 ---
 title: "How 0xVenta Works"
-description: "Description of your new file."
+description: "Detailed technical overview of OxVenta AI’s architecture and flow."
 ---
+
+OxVenta AI is a chain-agnostic protocol that enables users to perform complex blockchain operations through natural language. The system combines AI-driven language processing, smart contract automation, and cross-chain infrastructure to abstract away the complexity of DeFi.
+
+This page provides a high-level architectural overview of how OxVenta processes, secures, and executes blockchain actions.
+
+## AI Agent Layer
+
+The AI agent is the first layer of the system, responsible for interpreting user input and translating it into executable blockchain logic.
+
+## **Core Components**
+
+- **Qwen 32B** — A large language model (LLM) fine-tuned for DeFi semantics.
+- **LangChain** — A framework for connecting LLMs with external tools and smart contracts.
+- **Intent Parser** — Detects user intent such as "swap", "create token", or "add liquidity".
+- **Prompt Validator** — Ensures that all required parameters are provided and valid.
+
+### **Example Input**
+
+```
+Swap 2 ETH to USDT
+```
+
+Parsed internally as:
+
+| Field      | Value                           |
+| ---------- | ------------------------------- |
+| Action     | Swap                            |
+| From Token | ETH                             |
+| To Token   | USDT                            |
+| Amount     | 2                               |
+| Chain      | Auto-detected or user specified |
+
+## **2. Smart Contract Execution**
+
+After the intent is validated, the AI agent triggers smart contract interactions to execute the transaction securely.
+
+### **Contract Modules**
+
+- **TokenFactory** — Deploys custom ERC-20 tokens.
+- **SwapRouter** — Executes token swaps using integrated DEXs.
+- **LiquidityManager** — Adds or removes liquidity from AMM pools.
+- **BridgeAdapter** — Handles cross-chain token transfers.
+- **Validator** — Simulates gas cost, slippage, and transaction safety.
+
+Each contract is deployed per chain and may include upgradable proxy patterns or immutable deployments depending on the environment.
+
+## **3. Cross-Chain Interoperability**
+
+OxVenta supports multi-chain execution and bridging by integrating with trusted interoperability protocols.
+
+### **Supported Bridges**
+
+| Protocol  | Use Case                                      |
+| --------- | --------------------------------------------- |
+| LayerZero | Lightweight messaging between EVM chains      |
+| Wormhole  | Asset bridging between Solana and EVM         |
+| Axelar    | Cross-chain contract calls and token transfer |
+
+The AI selects the optimal bridging route based on transaction cost, security guarantees, and protocol availability.
+
+## Security and Verification 
+
+Security is embedded into every layer of OxVenta's architecture.
+
+## **Key Measures**
+
+- **Transaction Simulation** — Gas and risk analysis before signing
+- **Anomaly Detection** — AI-based monitoring for fraudulent behavior
+- **Multi-Signature Control** — Protection for privileged functions
+- **On-Chain Transparency** — Explorer links for all user operations
+
+> **_OxVenta does not custody user assets or hold private keys. All transactions are user-signed within the session context or via external wallets._**
+
+## Messaging Interface
+
+OxVenta interacts with users through conversational platforms using natural language input.
+
+## **Supported Interfaces**
+
+- **Telegram** (Live)
+- **Discord** (Planned)
+- **X / Twitter DM** (Planned)
+- **Web SDK** (Upcoming)
+
+## **Sample Commands**
+
+```
+Create token "MyToken" symbol MYT with 1,000,000 supplySwap 100 USDC to ETHProvide liquidity for MYT/ETH
+```
+
+The agent responds with real-time confirmations, simulation results, and transaction explorer links.
+
+## **Summary Architecture**
+
+| Layer               | Description                                       |
+| ------------------- | ------------------------------------------------- |
+| AI Agent            | Parses and validates user instructions            |
+| Smart Contracts     | Executes logic securely on-chain                  |
+| Bridge Protocols    | Enables cross-chain interaction and liquidity     |
+| Messaging Interface | Provides conversational access via chat platforms |
+| Security Framework  | Simulates, verifies, and monitors all activity    |
+
+OxVenta AI transforms DeFi interaction into a secure, intelligent, and chain-agnostic experience. All technical complexity is handled in the background—while users interact through simple, human-read

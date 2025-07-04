@@ -1,0 +1,112 @@
+---
+title: "Wallet Management"
+description: "Manage on-chain assets using OxVenta AI's secure wallet infrastructure."
+---
+
+OxVenta AI includes an integrated wallet management system that allows users to interact with their blockchain assets without relying on external extensions or third-party wallets. Wallets are automatically generated and maintained during user sessions, enabling seamless DeFi interaction inside the AI interface.
+
+## **Key Features**
+
+- Session-based wallet generation
+- Private key never stored or exposed
+- Full control over balances and transactions
+- Optional manual wallet import
+- Multi-chain address support
+
+## **Wallet Types**
+
+### **1. Session Wallet (default)**
+
+- Automatically created on first use
+- Used for swaps, token creation, and liquidity
+- Private key exists only in encrypted runtime memory
+- Automatically invalidated after session ends
+
+### **2. Imported Wallet (optional)**
+
+- Users can import a private key or mnemonic manually
+- Recommended for advanced users or persistent strategies
+- No key is ever transmitted or saved externally
+
+## **Commands**
+
+```
+/show wallet
+```
+
+Displays your current session wallet address.
+
+```
+/show balances
+```
+
+Lists current token balances on supported networks.
+
+```
+/import wallet <private-key>
+```
+
+Imports your own wallet for full control.
+
+```
+/reset wallet
+```
+
+Destroys the current session wallet and generates a new one.
+
+## **Supported Networks**
+
+- Binance Smart Chain (BSC)
+- Base
+- Ethereum (planned)
+- Polygon (planned)
+
+Each network has its own address, tracked internally by the agent.
+
+## **Security Considerations**
+
+- Wallets are non-custodial and user-owned
+- All transactions require explicit confirmation
+- Session wallets are short-lived and purged on timeout
+- Private keys are encrypted in memory only and never stored
+- Users can manually revoke, reset, or replace wallets
+
+## **Transaction Signing**
+
+Transactions initiated by the user are:
+
+1. Constructed by the AI agent
+2. Signed internally using the session or imported wallet
+3. Broadcast to the appropriate blockchain network
+4. Responded with a transaction hash and explorer link
+
+No transactions are signed without user confirmation.
+
+## **Viewing Wallet Activity**
+
+OxVenta provides on-demand insights for wallet activity.
+
+```
+/show transactions
+```
+
+Displays recent transaction history.
+
+```
+/check token <symbol>
+```
+
+Shows balance and metadata for a specific token.
+
+## **Example Output**
+
+```
+📦 Wallet Address (ETH):0x1234...abcd
+
+🪙 Balances:
+- ETH: 0.82
+- USDT: 134.50
+- MYT: 12,000
+
+View on EtherScan:https://etherscan.io/address/0x1234...abcd
+```

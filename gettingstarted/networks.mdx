@@ -1,4 +1,70 @@
 ---
 title: "Supported Networks and Wallets"
-description: "Description of your new file."
+description: "Overview of supported networks and how OxVenta manages internal wallet sessions."
 ---
+
+OxVenta AI is built to be **multi-chain** and **wallet-agnostic**, enabling secure interaction with various blockchains through a session-based wallet model. Unlike traditional Web3 dApps that rely on browser extensions, OxVenta abstracts wallet management to simplify user experience while maintaining full security and control.
+
+## Supported Blockchains
+
+| Blockchain                | Status         |
+| :------------------------ | :------------- |
+| Ethereum Mainnet          | 🟢 Live        |
+| Binance Smart Chain (BSC) | 🟢 Live        |
+| Base                      | 🟡 In Progress |
+| Hyper EVM                 | 🟡 In Progress |
+| Avalanche                 | 🟡 In Progress |
+| Abstract                  | 🟡 In Progress |
+| Arbitrum                  | 🟡 In Progress |
+| Unichain                  | 🟡 In Progress |
+| Solana                    | 🟡 In Progress |
+| Sui                       | 🟡 In Progress |
+
+## **Internal Wallet Management**
+
+OxVenta uses a **session-based wallet system** that allows users to perform blockchain actions without setting up external wallets or extensions.
+
+### **Key Features**
+
+- A temporary, non-custodial wallet is generated at session start.
+- The private key is encrypted in memory (never persisted).
+- All signing and transaction logic happens within the AI runtime.
+- Sessions are automatically invalidated after logout or timeout.
+- Users may optionally import their own private key or mnemonic phrase.
+
+> **_This approach provides a secure balance between usability and decentralization, especially for users unfamiliar with Web3 tooling._**
+
+## **Wallet Modes**
+
+### **1. Session Wallet (Default)**
+
+- Automatically created during the first interaction
+- Requires no manual setup or third-party wallet
+- Recommended for short sessions, simple swaps, and token deployment
+
+### **2. Imported Wallet (Advanced)**
+
+- Users may import a private key or mnemonic for persistent wallet control
+- Suitable for users conducting high-value transactions or managing portfolios
+- Signing still occurs client-side; OxVenta never stores sensitive data
+
+> **_Both modes operate under the same session environment and allow full feature access across supported networks._**
+
+## **Transaction Lifecycle**
+
+1. The user submits a command (e.g., `Swap 1 BNB to USDT`)
+2. OxVenta checks session wallet status and balance
+3. The AI agent validates input and simulates the transaction
+4. The transaction is constructed and signed internally
+5. The signed transaction is broadcast to the blockchain
+6. The user receives a confirmation with a transaction hash and explorer link
+
+## **Security Model**
+
+- **Non-Custodial**: Private keys are never stored or transmitted externally
+- **Ephemeral**: Wallets are valid only for the duration of the session
+- **Isolated**: Each user operates in an isolated, encrypted execution context
+- **Permissioned Signing**: No transaction is sent without explicit user approval
+- **Session Management**: Users can revoke or reset their wallet at any time
+
+> **_This model ensures users maintain control of their funds while benefiting from a frictionless DeFi experience._**

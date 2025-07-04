@@ -1,4 +1,89 @@
 ---
 title: "Use 0xVenta AI on Telegram"
-description: "Description of your new file."
+description: "How to interact with OxVenta AI via Telegram chat interface."
 ---
+
+OxVenta AI is accessible directly through Telegram, allowing users to interact with DeFi using natural language. No apps, extensions, or dashboards required — all actions can be performed inside a private chat with the AI agent.
+
+## **Start the Bot**
+
+To begin using OxVenta AI on Telegram:
+
+1. Open Telegram and search for `@OxVenta_defi_bot`
+2. Tap the **Start** button
+3. The bot will greet you and provide a short onboarding prompt
+
+The session will automatically generate a secure internal wallet for you to use during your interaction. You can also import your own key or wallet later.
+
+## **Supported Commands**
+
+You can use natural language commands to perform various actions. Below are examples:
+
+### **Token Operations**
+
+```
+Create token "MyToken" with symbol MYT and supply 1,000,000
+```
+
+### **Swaps**
+
+```
+Swap 50 USDT to ETH
+```
+
+### **Liquidity**
+
+```
+Provide liquidity for MYT/ETH with 1 ETH and 50000 MYT
+```
+
+### **Wallet**
+
+```
+Show my balancesCheck my recent transactions
+```
+
+## **Transaction Flow**
+
+1. You send a command (e.g. "Swap 1 BNB to USDT").
+2. The AI parses and validates the input.
+3. It prepares the transaction using your active wallet session.
+4. You receive a confirmation message with estimated gas.
+5. The transaction is signed and broadcasted.
+6. A success message with a block explorer link is returned.
+
+## **Session Management**
+
+OxVenta AI uses temporary session wallets unless a private key is imported.
+
+- Sessions are active only while the chat is ongoing
+- You can end or reset the session by typing:
+
+```
+/end session
+```
+
+or
+
+```
+/reset wallet
+```
+
+- You can view your current wallet address by typing:
+
+```
+/show wallet
+```
+
+## **Security Notes**
+
+- All signing is done within your Telegram session context
+- OxVenta does not store or export private keys
+- You are responsible for importing or exporting private keys securely
+- All operations are logged on-chain for transparency
+
+## **Tips**
+
+- Always ensure you have gas (e.g., BNB on BSC) to cover transactions
+- Use exact token symbols or contract addresses when possible
+- Use `/help` to list supported command formats

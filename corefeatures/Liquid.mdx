@@ -1,0 +1,77 @@
+---
+title: "Liquidity"
+description: "Add or remove liquidity in DeFi pools using OxVenta AI."
+---
+
+OxVenta AI allows users to provide and remove liquidity in supported decentralized exchange (DEX) pools using natural language commands. This feature enables users to earn trading fees and participate in DeFi ecosystems without navigating complex UIs.
+
+The AI agent handles routing, price quoting, and confirmation — making liquidity provisioning accessible to all users.
+
+## **Supported Actions**
+
+- Add liquidity to a token pair
+- Remove liquidity from a pool
+- Create a new pool if none exists (if supported)
+- View LP token balance and pool stats (planned)
+
+## **Example Commands**
+
+```
+Provide liquidity for MYT/ETH with 1 ETH and 50000 MYT
+```
+
+```
+Remove liquidity from MYT/ETH
+```
+
+```
+Add liquidity: 1000 USDC and 0.5 ETH
+```
+
+The agent interprets the command, estimates the pool ratio, and executes the transaction accordingly.
+
+## **Liquidity Requirements**
+
+- Users must hold both tokens in the trading pair.
+- LP tokens are issued and stored in the session wallet.
+- Minimum and maximum liquidity limits may apply depending on the pool.
+
+## **Fee Rewards**
+
+- Liquidity providers earn a share of the trading fees (e.g., 0.25% per swap).
+- LP rewards are automatically accumulated and can be claimed manually (future feature).
+- OxVenta does not charge additional fees for liquidity actions.
+
+## **Process Overview**
+
+1. User submits a command
+2. AI parses and verifies token pair and amounts
+3. Checks pool existence and ratio
+4. Estimates gas and confirms slippage
+5. Executes transaction and returns LP token details
+
+## **Output Example**
+
+```
+✅ Liquidity Added!Pool: MYT/ETH Supplied: 1 ETH + 50000 MYTLP Tokens Received: 1812.45 LPContract: 0x123...abcView Pool: https://uniswap.org/add/MYT/WBNB
+```
+
+## **Remove Liquidity**
+
+Users can also remove LP positions using commands like:
+
+```
+Remove liquidity from MYT/ETH
+```
+
+The agent will:
+
+- Determine current LP balance
+- Prompt user for confirmation
+- Return assets and burn LP tokens
+
+## **Risks and Notes**
+
+- Impermanent loss may occur during volatile market conditions.
+- LP positions are subject to pool ratio and market volatility.
+- Always review slippage estimates before confirming.

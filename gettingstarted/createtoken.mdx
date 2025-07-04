@@ -1,4 +1,136 @@
 ---
 title: "Create Your Own Token"
-description: "Description of your new file."
+description: "Learn how to create an ERC-20 token using OxVenta AI directly from Telegram."
 ---
+
+OxVenta AI enables anyone to deploy a fully functional ERC-20 token without writing code. The process is entirely managed by an AI agent through a conversational interface on **Telegram**, allowing for rapid token creation across supported blockchains.
+
+This guide walks you through how to create and deploy your own token in just a few minutes.
+
+## Prerequisites
+
+Before proceeding, ensure you have:
+
+- A valid [**<u>Telegram</u>**](https://telegram.org/) account
+- Access to the official OxVenta AI bot: `@oxVenta_defi_bot`
+- Sufficient native tokens (e.g., BNB, ETH) in your wallet to cover gas fees
+- (Optional) A wallet app such as MetaMask or Trust Wallet
+
+## Step-by-Step Guide
+
+- Open Telegram and search for `@oxVenta_defi_bot`
+- Tap **Start** to initiate a session
+- The AI agent will guide you through supported commands
+
+> **_You may use the default session wallet or connect your own wallet via WalletConnect (if supported)._**
+
+## Send a Token Creation Command
+
+Use plain English to define your token parameters. For example:
+
+```
+Create a token named MyToken with symbol MYT and supply 1,000,000
+```
+
+The agent will:
+
+- Parse and validate your request
+- Summarize your token configuration
+- Prompt you for confirmation before deployment
+
+You may also include optional features:
+
+```
+Create a token called MyTijeb with symbol MT, 500 million supply, 8 decimals, burning enabled, no minting
+```
+
+## Approve the Transaction
+
+Once confirmed:
+
+- Gas fees will be estimated and displayed
+- You will be prompted to sign the transaction using:
+  - WalletConnect (external wallet)
+  - In-session wallet (secure, temporary)
+
+> **_OxVenta never stores private keys. Signing occurs locally or through trusted integrations._**
+
+## Smart Contract Deployment
+
+Upon approval, the AI agent will:
+
+- Generate a compliant ERC-20 contract
+- Deploy it on the selected blockchain
+- Return essential details:
+
+```
+✅ Token Deployed Successfully
+
+Name: MyToken
+Symbol: MYT
+Total Supply: 1,000,000
+
+Contract Address: 0xAbC123...789
+View on BscScan: https://bscscan.com/token/0xAbC123...789
+```
+
+## Add Liquidity (Optional)
+
+You may immediately pair your token with a base asset (e.g., BNB or ETH) to enable trading:
+
+```
+Pair MYT with 1 ETH
+```
+
+The agent will:
+
+- Create a new liquidity pool on a supported DEX
+- Deposit both assets and return:
+  - LP token address
+  - Trading link (e.g., Uniswap)
+
+> **_Adding liquidity increases usability and accessibility of your token._**
+
+## Tips & Best Practices
+
+- Use a unique name and symbol to prevent confusion with existing tokens.
+- Choose a realistic total supply based on your use case.
+- Consider enabling minting/burning only if necessary.
+- Add liquidity early for better discoverability and trading support.
+
+## Example Commands
+
+| Command                                                     | Description              |
+| ----------------------------------------------------------- | ------------------------ |
+| Create token "MyToken" symbol MYT with 2 million supply     | Basic token              |
+| Create token "MyToken" with burning enabled                 | Includes burn function   |
+| Create stablecoin USDx pegged to USD with 10 million supply | Simulates a stable asset |
+| Pair MYT with 3 ETH                                         | Add Liquidity Pool       |
+
+## Supported Blockchains
+
+| Blockchain                | Status         |
+| ------------------------- | -------------- |
+| Ethereum Mainnet          | 🟢 Live        |
+| Binance Smart Chain (BSC) | 🟢 Live        |
+| Base                      | 🟡 In Progress |
+| Hyper EVM                 | 🟡 In Progress |
+| Avalanche                 | 🟡 In Progress |
+| Abstract                  | 🟡 In Progress |
+| Arbitrum                  | 🟡 In Progress |
+| Unichain                  | 🟡 In Progress |
+| Solana                    | 🟡 In Progress |
+| Sui                       | 🟡 In Progress |
+
+> **_Additional EVM and non-EVM networks will be supported as OxVenta expands cross-chain compatibility._**
+
+## Support
+
+If you encounter issues:
+
+- Use the `/help` command in the Telegram bot
+- Join the [**<u>Telegram Community</u>**](https://t.me/oxventa)
+- Ask on [**<u>Discord</u>**](https://discord.gg/oxventa)
+- Contact: `support@oxventa.ai`
+
+OxVenta is designed to make token creation accessible to everyone — securely, intuitively, and without technical barriers.

@@ -1,0 +1,75 @@
+---
+title: "Token Creation"
+description: "Create and deploy ERC-20 tokens using OxVenta AI with natural language commands."
+---
+
+OxVenta AI allows anyone to create and deploy their own ERC-20 tokens using a simple, conversational interface. No coding experience or developer tools are required. Tokens can be generated and published on supported blockchains within seconds.
+
+## **Basic Token Parameters**
+
+The AI agent accepts the following token parameters:
+
+| Parameter  | Description                                |
+| ---------- | ------------------------------------------ |
+| `name`     | The full display name of the token         |
+| `symbol`   | The ticker symbol (e.g., MYT, USDT)        |
+| `supply`   | Total supply to be minted                  |
+| `decimals` | Decimal precision (default is 18)          |
+| `mintable` | (Optional) Whether the token can be minted |
+| `burnable` | (Optional) Whether the token can be burned |
+| `taxes`    | (Optional) Transfer tax settings           |
+
+## [**Example Commands**](https://docs.oxventa.io/#example-commands)
+
+```
+Create a token called "LoyaltyToken" with symbol LTY and supply 1,000,000
+```
+
+```
+Create token "AlphaCoin" symbol ALPHA, 500,000 supply, burnable, no minting
+```
+
+The agent will:
+
+1. Parse the input
+2. Confirm token configuration with you
+3. Generate a verified ERC-20 smart contract
+4. Estimate gas and deploy it
+5. Return the token address and explorer link
+
+## **Token Types**
+
+### **Standard ERC-20**
+
+- Fixed supply
+- No extra logic
+
+### **Advanced Tokens (optional)**
+
+- Mintable
+- Burnable
+- Taxable (e.g., 1% on transfer)
+- Ownership controls
+
+> **_Token features are optional and can be enabled via command._**
+
+## **Deployment Flow**
+
+1. User sends token creation command
+2. Agent parses and validates parameters
+3. Smart contract is generated
+4. User confirms and pays gas
+5. Token is deployed to selected network
+6. Address and metadata are returned
+
+## **Deployment Output Example**
+
+```
+✅ Token Deployed!Name: MyToken: MYT Total Supply: 1,000,000Decimals: 18Contract Address: 0xAbC123...defView on EtherScan: https://etherscan.com/token/0xAbC...
+```
+
+## **Fees**
+
+- Users must cover network gas fees
+- Token creation service is free during beta (subject to change)
+- Optional features (e.g. audit, verification) may incur additional charges in future versions

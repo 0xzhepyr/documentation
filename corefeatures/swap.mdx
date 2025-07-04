@@ -1,0 +1,76 @@
+---
+title: "Token Swaps"
+description: "Token swap functionality in OxVenta AI including single-chain, cross-chain, and fee optimization."
+---
+
+OxVenta AI allows users to swap tokens across various blockchains using natural language commands. The AI agent handles all aspects of the swap—from parsing intent, calculating best routes, to executing the transaction via audited smart contracts.
+
+Swaps are categorized into two types: single-chain and cross-chain.
+
+## **Single-Chain Swaps**
+
+Single-chain swaps refer to token exchanges performed on the same blockchain.
+
+### **Example Commands**
+
+```
+Swap 50 USDT to MyToken 0.1 ETH to USDC
+```
+
+### **Process**
+
+1. AI detects the tokens and verifies network compatibility.
+2. A transaction is prepared using the chain’s native DEX router.
+3. Gas is estimated, slippage is controlled.
+4. The user signs the transaction.
+5. Confirmation is returned via Telegram with transaction hash and explorer link.
+
+## **Cross-Chain Swaps**
+
+Cross-chain swaps involve exchanging assets across two different blockchains. This is handled automatically by OxVenta’s AI routing engine.
+
+### **Example Command**
+
+```
+Swap 100 USDT on Mainet to ETH on Base
+```
+
+### **Flow**
+
+1. User initiates command.
+2. The agent selects a bridge (e.g., LayerZero, Axelar).
+3. Source token is locked or burned.
+4. Asset is transferred to destination chain.
+5. Destination swap is executed.
+6. Result is returned in chat.
+
+### **Supported Bridges**
+
+- LayerZero
+- Wormhole
+- Axelar
+
+> **_The AI abstracts all bridge complexities from the user._**
+
+## **Fee Structure and Gas Optimization**
+
+OxVenta AI transparently displays fees and uses internal logic to minimize user cost.
+
+### **Fees**
+
+- DEX swap fee (typically 0.3%)
+- Cross-chain bridge fee (varies by protocol)
+- OxVenta service fee (e.g., 0.1%, configurable)
+
+### **Optimization Techniques**
+
+- Pre-swap route simulation
+- Aggregation across multiple liquidity sources
+- Automated token wrapping/unwrapping (e.g., ETH ↔ WETH)
+- Dynamic gas estimation and slippage control
+
+### **Example Gas Estimate Output**
+
+```
+Estimated Gas: 0.0032 ETHExpected Slippage: 0.43%Total Fee: 0.15%
+```
