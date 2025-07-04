@@ -1,4 +1,92 @@
 ---
 title: "Security"
-description: "Description of your new file."
+description: "Learn how OxVenta AI protects users through layered security mechanisms and transparent execution."
 ---
+
+Security is a first-class priority in OxVenta AI. Every interaction is monitored, validated, and protected by a layered security model combining audited contracts, AI-driven fraud detection, user rate limiting, and on-chain transparency.
+
+## **Smart Contract Audit Reports**
+
+All core smart contracts used by OxVenta are audited before being deployed to mainnet.
+
+### **Audit Process**
+
+- Internal code reviews by the OxVenta engineering team
+- External audits by independent third-party firms (in progress)
+- Post-deployment monitoring for known vulnerability signatures
+
+### **Public Reports**
+
+Audit reports will be published at:
+
+```
+-
+```
+
+Each contract includes a changelog and verification hash to ensure that the deployed bytecode matches the audited version.
+
+## **AI Fraud Detection**
+
+OxVenta uses AI models to detect suspicious behavior in real time.
+
+### **Detection Techniques**
+
+- Pattern matching against common DeFi attack vectors
+- Behavioral anomaly detection based on wallet activity
+- Signature verification and permission analysis
+- Transaction frequency and volume thresholds
+
+### **Example Triggers**
+
+- Rapid token minting followed by liquidity removal
+- Repeated swap failures or gas exhaustion
+- Sudden token price manipulations
+
+If fraud is suspected, the agent will:
+
+1. Halt execution
+2. Inform the user
+3. Log the event for review
+
+> **_AI detection runs independently of the blockchain layer and does not interfere with successful transactions unless malicious intent is flagged._**
+
+## **User Authentication & Rate Limiting**
+
+Each interaction with the OxVenta AI agent is tied to a unique session identifier.
+
+### **Authentication Flow**
+
+- Session created upon user start
+- Temporary wallet assigned and linked to identity
+- All transactions are gated by session authentication
+
+### **Rate Limits**
+
+To prevent abuse and protect infrastructure:
+
+- Swap requests: limited to X/min per user
+- Token creation: limited per session
+- Liquidity actions: capped based on value and frequency
+
+Abuse attempts may result in temporary suspension of session activity.
+
+## **Transparency & On-Chain Verification**
+
+OxVenta emphasizes traceability and user verification of all activity.
+
+### **Features**
+
+- Every transaction returns a block explorer link
+- Token contracts are published and verified (where possible)
+- LP pools and token metadata are viewable on-chain
+- Optional full session logs (user-controlled)
+
+### **Example Response**
+
+```
+✅ Swap Executed
+Amount: 100 USDT to ETH
+Explorer: https://etherscan.io/tx/0xabc123...
+```
+
+> **_OxVenta never hides or obfuscates activity. All user actions are verifiable._**

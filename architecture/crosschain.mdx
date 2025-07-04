@@ -1,4 +1,94 @@
 ---
 title: "Cross-Chain Interoperability"
-description: "Description of your new file."
+description: "Understand how OxVenta AI enables seamless cross-chain operations through integrated protocols."
 ---
+
+OxVenta AI is designed to be fully interoperable across multiple blockchain ecosystems. It allows users to execute operations across chains using simple commands, while handling all the bridging, routing, and logic execution behind the scenes.
+
+## **Supported Protocols: LayerZero, Wormhole, Axelar**
+
+OxVenta integrates with leading cross-chain protocols to enable secure and efficient messaging, asset transfer, and contract execution across chains.
+
+### **LayerZero**
+
+- Enables ultra-light cross-chain messaging
+- Ideal for EVM-to-EVM communication
+- Used for token swaps, LP sync, and session messages
+
+### **Wormhole**
+
+- Connects EVM and non-EVM chains such as Solana
+- Allows for wrapped asset transfer between chains
+- Used for token bridging and asset migration
+
+### **Axelar**
+
+- General-purpose interchain messaging and contract calling
+- Supports token and logic execution with verification
+- Useful for future Cosmos and cross-VM interoperability
+
+## **EVM vs Non-EVM Chain Differences**
+
+OxVenta is being developed to support both EVM and non-EVM blockchains. Each category has different characteristics that affect how bridging and execution are handled.
+
+### **EVM Chains **
+
+- Support Solidity smart contracts
+- Use similar address formats and transaction structures
+- Easy to unify under shared contract logic
+
+### **Non-EVM Chains (Solana, Cosmos)**
+
+- Use different programming models (e.g., Rust, CosmWasm)
+- Require translation/adaptation layers for compatibility
+- May not support the same wallet formats or transaction flows
+
+> **_OxVenta abstracts these differences at the AI level, allowing users to execute commands without worrying about chain architecture._**
+
+## **Asset Bridging Flow (AI-driven)**
+
+When a user initiates a cross-chain action (e.g., swapping USDT on BSC to ETH on Base), the AI agent automates the bridging process.
+
+### **Flow Overview**
+
+1. **User Command**
+
+```
+Swap 100 USDT on BSC to ETH on Base
+```
+
+2. **AI Interpretation**
+
+- Identifies source and destination chains
+- Selects appropriate bridging protocol
+- Calculates optimal bridge route and timing
+
+3. **Asset Lock or Burn**
+
+- On the source chain, the asset is locked or burned
+
+4. **Bridge Transfer**
+
+- The bridging protocol sends proof or wrapped tokens to the target chain
+
+5. **Target Chain Execution**
+
+- Swap is completed on the destination chain
+- User receives the final asset
+
+6. **Confirmation**
+
+- Transaction hash and explorer links for both chains are returned
+
+## **Example Command**
+
+```
+Swap 500 USDC on Polygon to BNB on BSC
+```
+
+OxVenta will:
+
+- Lock USDC on Polygon
+- Bridge assets via Axelar
+- Receive on BSC and swap for BNB
+- Return result and status
