@@ -1,0 +1,94 @@
+---
+title: "AI Agent"
+description: "Learn how OxVenta AI Agent processes commands, ensures security, and optimizes interaction."
+---
+
+At the core of OxVenta’s interaction layer is the AI Agent — a conversational engine that interprets user commands and transforms them into executable DeFi transactions. The agent leverages state-of-the-art language modeling and secure execution to deliver an intuitive DeFi experience.
+
+## **Natural Language Commands (Telegram / Discord)**
+
+OxVenta supports user interaction through plain-text input in messaging platforms.
+
+### **Supported Platforms**
+
+- **Telegram** (live)
+- **Discord** (planned)
+- **X / Twitter DM** (planned)
+
+### **Example Commands**
+
+```
+Swap 1 ETH to USDT
+Create a token called "MyToken" with symbol MYT and 1 million supply
+Provide liquidity for MYT/ETH
+Check wallet balanceShow my last 5 transactions
+```
+
+The agent will respond with confirmations, status, or prompts for missing info. Future support for voice and multi-language input is planned.
+
+## **How LangChain & Qwen 32B Work Together**
+
+The AI agent architecture is powered by two major components:
+
+### **Qwen 32B**
+
+- A large language model (LLM) optimized for command understanding
+- Performs semantic interpretation of user input
+- Handles token extraction, context parsing, and logical inference
+
+### **LangChain**
+
+- Connects the language model with execution tools
+- Manages stateful conversation sessions
+- Provides routing between AI output and blockchain infrastructure
+- Allows function calling (e.g., swap(), deployToken()) via tools
+
+Together, Qwen understands _what_ the user wants, and LangChain figures out _how_ to execute it on-chain.
+
+## **Security & Authentication Flow**
+
+Each command is verified and authenticated before any blockchain interaction occurs.
+
+### **Flow**
+
+1. **Command received** from user (via Telegram/Discord).
+2. **Intent parsed** and command is validated.
+3. **Session wallet** or imported key is verified.
+4. **Transaction simulation** is performed.
+5. **Confirmation prompt** is sent to user.
+6. **Transaction signed** and broadcasted.
+7. **Success message** and transaction hash returned.
+
+No transactions are executed without user approval.
+
+### **Security Features**
+
+- Encrypted session identity (per user)
+- AI-based fraud and anomaly detection
+- Rate-limiting and abuse prevention
+- On-chain audit logging (optional)
+
+## **Prompt Optimization Tips**
+
+To improve clarity and performance when interacting with the AI agent:
+
+### **Do**
+
+<Check>
+  - Use direct language\
+    `Swap 50 USDT to ETH`
+  - Be specific with amounts and tokens\
+    `Create token named TravelToken with 1,000,000 supply`
+  - Specify chains if needed\
+    `Swap 2 ETH to USDC on Base`
+</Check>
+
+### **Avoid** 
+
+<Danger>
+  - Vague requests like “Make me rich”
+  - Ambiguous token names (“USD” could be multiple assets)
+  - Running multiple commands in one sentence
+</Danger>
+
+Use `/help` to view command templates or `/history` to recall past prompts.
